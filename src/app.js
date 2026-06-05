@@ -33,6 +33,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
+      "https://annonymous-wish-bjxb.vercel.app",
       "https://annonymous-wish-mf84n6vzt-makiri-codes-projects.vercel.app",
     ],
     credentials: true,
