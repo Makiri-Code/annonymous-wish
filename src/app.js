@@ -25,8 +25,10 @@ app.use(express.static(path.join(__dirname, "..", "dist")));
 
 app.use(
   cors({
-    origin:
+    origin: [
       "https://annonymous-wish-mf84n6vzt-makiri-codes-projects.vercel.app",
+      "http://localhost:5173",
+    ],
     credentials: true,
   }),
 );
