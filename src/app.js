@@ -17,21 +17,30 @@ const limiter = rateLimit({
   legacyHeaders: false,
 });
 
-app.use(helmet());
-
-app.use(express.json({ limit: "10kb" }));
-
-app.use(express.static(path.join(__dirname, "..", "dist")));
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      connectSrc: [
+        "'self'",
+        "https://annonymous-wish-mf84n6vzt-makiri-codes-projects.vercel.app",
+      ],
+    },
+  }),
+);
 
 app.use(
   cors({
     origin: [
-      "https://annonymous-wish-mf84n6vzt-makiri-codes-projects.vercel.app",
       "http://localhost:5173",
+      "https://annonymous-wish-mf84n6vzt-makiri-codes-projects.vercel.app",
     ],
     credentials: true,
   }),
 );
+app.use(express.json({ limit: "10kb" }));
+
+app.use(express.static(path.join(__dirname, "..", "dist")));
 
 app.use(morgarn("common"));
 
