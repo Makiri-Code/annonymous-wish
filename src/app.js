@@ -36,7 +36,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "http://localhaost:800",
+      "http://localhaost:8000",
       "https://annonymous-wish-bjxb.vercel.app",
       "https://annonymous-wish-mf84n6vzt-makiri-codes-projects.vercel.app",
     ],
