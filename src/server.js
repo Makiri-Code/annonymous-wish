@@ -2,7 +2,7 @@ const app = require("./app");
 const http = require("http");
 const { connectToMongo } = require("./services/mogo");
 require("dotenv").config();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8000;
 const server = http.createServer(app);
 
 async function startServer() {
