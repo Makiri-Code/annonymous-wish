@@ -7,6 +7,7 @@ const {
 } = require("./wishes.controller");
 
 const wishesRoute = express.Router();
+
 wishesRoute.route("/").get(httpGetWishes).post(httpPostWishes);
 
 wishesRoute.route("/:id").patch(httpUpdatetWishes);

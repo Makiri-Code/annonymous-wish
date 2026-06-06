@@ -19,26 +19,14 @@ const limiter = rateLimit({
   legacyHeaders: false,
 });
 
-app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ["'self'"],
-      connectSrc: [
-        "'self'",
-        "https://annonymous-wish-mf84n6vzt-makiri-codes-projects.vercel.app",
-        "https://annonymous-wish-bjxb.vercel.app",
-      ],
-    },
-  }),
-);
+// app.use(helmet());
 
 app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "http://localhost:8000",
-      "https://annonymous-wish-bjxb.vercel.app",
-      "https://annonymous-wish-mf84n6vzt-makiri-codes-projects.vercel.app",
+      "https://annonymous-wish.onrender.com",
+      "https://annonymous-wishes.makiricodes.com.ng/",
     ],
     credentials: true,
   }),
